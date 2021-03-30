@@ -17,3 +17,7 @@
 - No one release without label, assuming labelId as not null
 - No one release without type, assuming typeId as not null
 - I'll be using trunk-based over git flow since this is a code challenge and it doesn't make sense to have pull requests
+- Resolving the enableArithAbort issue, it was a deprecated notice when connection
+- I'm assuming that recors will be sent one by one, and not as a big array. If there is time I would implement an endpoint where it'll be able to receive a huge amount of data as a json array.
+- Skipping data validation for now, I don't know if there is time to do so. But this is my first thing on todo list. A joi or express-openapi-validator
+- Putting controllers and error handlers on todo list
