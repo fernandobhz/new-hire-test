@@ -17,3 +17,4 @@
 - No one release without label, assuming labelId as not null
 - No one release without type, assuming typeId as not null
 - I'll be using trunk-based over git flow since this is a code challenge and it doesn't make sense to have pull requests
+- Resolving the enableArithAbort issue, it was a deprecated notice when connection
