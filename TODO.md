@@ -1,10 +1,12 @@
 # Todo
+* Dedup algorithm
+*
+*
 * Validate Field sizes - joi or express-openapi-validator
 * Validate Enums
 * Controllers
 * Better error handling
 * Better routes controller organization
-* Dedup algorithm
 * Stream input and stream output
 * Unit test
 * Swagger
