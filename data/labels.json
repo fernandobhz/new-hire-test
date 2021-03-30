@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "id": "222123",
+      "name": "Harvest Records",
+      "distributor": "Capitol Music Group",
+      "region": "US"
+    },
+    {
+      "id": "222122",
+      "name": "Asylum Records",
+      "distributor": "Warner Music Group",
+      "region": "US"
+    },
+    {
+      "id": "222124",
+      "name": "Good Years",
+      "distributor": null,
+      "region": "UK"
+    },
+    {
+      "id": "222126",
+      "name": "Polydor Records",
+      "distributor": "Universal Music Group",
+      "region": "UK"
+    },
+    {
+      "id": "222128",
+      "name": "Atlantic Records",
+      "distributor": "Empire",
+      "region": "US"
+    },
+    {
+      "id": "222129",
+      "name": "BunHead Records",
+      "distributor": null,
+      "region": "US"
+    }
+  ]
+}

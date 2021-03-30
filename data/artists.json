@@ -1,0 +1,139 @@
+{
+  "data": [
+    {
+      "id": "111123",
+      "name": "Lil Silva",
+      "spotifyId": "2Kv0ApBohrL213X9avMrEn",
+      "genres": ["bass music", "future garage", "uk funky", "vogue"]
+    },
+    {
+      "id": "111122",
+      "name": "Ed Sheeran",
+      "spotifyId": "6eUKZXaKkcviH0Ku9w2n3V",
+      "genres": ["pop", "uk pop"]
+    },
+    {
+      "id": "111223",
+      "name": "Banks",
+      "spotifyId": "2xe8IXgCTpwHE3eA9hTs4n",
+      "genres": [
+        "alternative r&b",
+        "dance pop",
+        "electropop",
+        "indie poptimism",
+        "indie r&b",
+        "indietronica",
+        "pop",
+        "tropical house",
+        "vapor soul"
+      ]
+    },
+    {
+      "id": "111333",
+      "name": "Years & Years",
+      "spotifyId": "5vBSrE1xujD2FXYRarbAXc",
+      "genres": [
+        "dance pop",
+        "gauze pop",
+        "pop",
+        "post-teen pop",
+        "tropical house",
+        "uk pop"
+      ]
+    },
+    {
+      "id": "111334",
+      "name": "Best Coast",
+      "spotifyId": "5YkBrE0wF8cAlq3GCOw5Eu",
+      "genres": [
+        "folk-pop",
+        "indie pop",
+        "indie rock",
+        "indie surf",
+        "indietronica",
+        "la indie",
+        "metropopolis",
+        "modern rock",
+        "noise pop",
+        "nu gaze"
+      ]
+    },
+    {
+      "id": "111338",
+      "name": "Hayley Kiyoko",
+      "spotifyId": "3LjhVl7GzYsza1biQjTpaN",
+      "genres": [
+        "dance pop",
+        "electropop",
+        "indie poptimism",
+        "pop",
+        "post-teen pop"
+      ]
+    },
+    {
+      "id": "111339",
+      "name": "Kim Petras",
+      "spotifyId": "",
+      "genres": [
+        "dance pop",
+        "electropop",
+        "escape room",
+        "indie poptimism",
+        "pop",
+        "post-teen pop",
+        "transpop"
+      ]
+    },
+    {
+      "id": "111400",
+      "name": "SOPHIE",
+      "spotifyId": "5a2w2tgpLwv26BYJf2qYwu",
+      "genres": [
+        "art pop",
+        "electropop",
+        "escape room",
+        "hyperpop",
+        "indietronica",
+        "pop",
+        "transpop"
+      ]
+    },
+    {
+      "id": "111122",
+      "name": "Ed Sheeran",
+      "spotifyId": "",
+      "genres": ["pop", "uk pop"]
+    },
+    {
+      "id": "111333",
+      "name": "Years & Years",
+      "spotifyId": "5vBSrE1xujD2FXYRarbAXc",
+      "genres": []
+    },
+    {
+      "id": "111401",
+      "name": "Dorian Electra",
+      "spotifyId": "202HZzqKvPsMHcbwnDZx7u",
+      "genres": [
+        "art pop",
+        "electropop",
+        "escape room",
+        "hyperpop",
+        "strut",
+        "transpop"
+      ]
+    },
+    {
+      "id": "111338",
+      "name": "Hayley Kiyoko",
+      "spotifyId": "3LjhVl7GzYsza1biQjTpaN",
+      "genres": [
+        "dance pop",
+        "electropop",
+        "indie poptimism",
+        "pop",
+        "post-teen pop"
+      ]
+    }
+  ]
+}

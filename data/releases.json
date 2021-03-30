@@ -1,0 +1,120 @@
+{
+  "data": [
+    {
+      "title": "The Altar",
+      "release-date": "2016-05-13",
+      "track-count": 13,
+      "upc": "00602547762931",
+      "artists": ["111223"],
+      "label": "222123",
+      "type": "album"
+    },
+    {
+      "title": "Divide",
+      "release-date": "2017-03-03",
+      "track-count": 13,
+      "upc": "190295851330",
+      "artists": ["111122"],
+      "label": "222122",
+      "type": "album"
+    },
+    {
+      "title": "Goddess",
+      "release-date": "2014-01-01",
+      "track-count": 14,
+      "upc": "00602537546671",
+      "artists": ["111223"],
+      "label": "222123",
+      "type": "album"
+    },
+    {
+      "title": "Jimi",
+      "release-date": "2016-05-13",
+      "track-count": 6,
+      "upc": "191018954376",
+      "artists": ["111123"],
+      "label": "222124",
+      "type": "album"
+    },
+    {
+      "title": "Work",
+      "release-date": "2013-03-01",
+      "track-count": 1,
+      "upc": "5050580590649",
+      "artists": ["111123", "111223"],
+      "label": "222123",
+      "type": "single"
+    },
+    {
+      "title": "California Nights",
+      "release-date": "2015-05-04",
+      "track-count": 12,
+      "upc": "00602547232786",
+      "artists": ["111334"],
+      "label": "222123",
+      "type": "album"
+    },
+    {
+      "title": "Palo Santo (Deluxe)",
+      "release-date": "2019-02-14",
+      "track-count": 16,
+      "upc": "00602577485695",
+      "artists": ["111333"],
+      "label": "222126",
+      "type": "album"
+    },
+    {
+      "title": "The Altar",
+      "release-date": "2016-05-13",
+      "track-count": null,
+      "upc": "00602547762931",
+      "artists": ["111223"],
+      "label": "222123",
+      "type": "album"
+    },
+    {
+      "title": "Expectations",
+      "release-date": "2018-03-30",
+      "track-count": 13,
+      "upc": "075679881090",
+      "artists": ["111338"],
+      "label": "222128",
+      "type": "album"
+    },
+    {
+      "title": "Divide",
+      "release-date": "2017-03-03",
+      "track-count": 13,
+      "upc": "",
+      "artists": ["111122"],
+      "label": "222122",
+      "type": "album"
+    },
+    {
+      "title": "Goddess",
+      "release-date": "2014-01-01",
+      "upc": "00602537546671",
+      "artists": [],
+      "label": "222123",
+      "type": "album"
+    },
+    {
+      "title": "The Altar",
+      "release-date": "2016-05-13",
+      "track-count": 13,
+      "upc": "00602547762931",
+      "artists": ["111223"],
+      "label": null,
+      "type": "album"
+    },
+    {
+      "title": "Work",
+      "release-date": "2013-03-01",
+      "track-count": 1,
+      "upc": "5050580590649",
+      "artists": ["111123"],
+      "label": "222123",
+      "type": "single"
+    }
+  ]
+}
