@@ -1,0 +1,33 @@
+{
+  "name": "new-hire-test",
+  "version": "1.0.0",
+  "description": "- Setup a database / data store to house the json data provided (labels, artists, releases)  - Using a data processing implementation, remove any existing duplicates before inserting them into your data repository. - Create a POST route that validates and saves incoming data  - Create a GET route that can retrieve and return artist release data based on the following parameters:     - Return all artist data     - Return a single artist by name or ID     - Return multiple artists by names or ID's     - Filter by \"album\" or \"single\"     - Filter by label id     - Filter by UPC",
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.4.1",
+    "morgan": "^1.10.0",
+    "mssql": "^6.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernandobhz/new-hire-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fernandobhz/new-hire-test/issues"
+  },
+  "homepage": "https://github.com/fernandobhz/new-hire-test#readme"
+}
