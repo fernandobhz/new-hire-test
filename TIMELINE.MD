@@ -1,0 +1,19 @@
+- Should I use stream to parse input? Choose the simple one, limiting the input size.
+- Deduplication methods, what is the best method for this coding challenge? Choose: Upsert method
+- Installing MSSQL package, dotenv package, configuring the connection.
+- Creating documentation about how to install SQL Server and configure it to allow TCP/IP connections.
+- Creating SQL Server tables.
+- What primary keys should releases have? UPC seems to be obvious, but, there is some releases without it. I'm assuming that releases without UPC is a new release that doesn't have that number yet. We also have some releases without 2nd artist. I'm assuming title and release-date is the identifier for that table.
+- Should I convert to camelCase or use as it's? Using it as it is, since SQL Server support kebab case.
+- What is the max length of an UPC number? My research says 12 digits, but we have here 13-14 digits... I'm assuming a varchar(50) here, since I can't be sure of the amount of chars of that field.
+- We don't have the max length for the title as well... Assuming nvarchar(300) , since we have to have less then 900 bytes of index and it gives a little bit extra space for other fields on others indexes.
+- Assuming spofifyId as 40 chars, since that sha1 is the most likely  (maxlength) to use as and global id nowadays and it can handle uuid as well.
+- genres filed i
+- Others fields that we can't know the max size will be nvarchar(300)
+- No one artists without spotifyId, assuming it as not null
+- No one label without region, assuming it as not null
+- No one release without title, assuming it as not null
+- No one release without release-date, assuming it as not null
+- No one release without label, assuming labelId as not null
+- No one release without type, assuming typeId as not null
+- I'll be using trunk-based over git flow since this is a code challenge and it doesn't make sense to have pull requests
