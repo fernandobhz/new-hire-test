@@ -1,7 +1,9 @@
 # Todo Priorities
+* Releases get/post
 * Dedup algorithm
-*
 * Data validations and error handling
+* Queries
+* 
 * Reorganazing commits
 * Create proper Repositories for entities
 *
