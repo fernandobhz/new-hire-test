@@ -6,8 +6,7 @@ export const upsertArtistsGenres = async ({ transaction, artistId, genreId }) =>
   const {
     recordset: [existingRow],
   } = await request.query`
-      select
-        id
+      select 1
       from artists_genres
       where artistId = ${artistId}
       and genreId = ${genreId} 

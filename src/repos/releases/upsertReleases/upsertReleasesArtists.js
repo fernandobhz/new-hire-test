@@ -6,8 +6,7 @@ export const upsertReleasesArtists = async ({ transaction, artistId, releaseId }
   const {
     recordset: [existingRow],
   } = await request.query`
-      select
-        id
+      select 1
       from releases_artists
       where artistId = ${artistId}
       and releaseId = ${releaseId} 

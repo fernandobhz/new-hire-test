@@ -1,5 +1,6 @@
 # Todo Priorities
 * Dedup algorithm
+* Return record as is after insert
 * Data validations and error handling
 * Queries
 *

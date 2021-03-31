@@ -25,3 +25,4 @@
 - Code organized
 - Moving from kebab-case to camelCase on sql server.
 - POST and GET of labels, artists and releases done but it's missing the dedup algorithm
+- Assuming to only add new relations between releases and artist, since we have some with missing data.
