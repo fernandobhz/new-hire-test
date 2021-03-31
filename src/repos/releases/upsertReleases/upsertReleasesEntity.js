@@ -22,7 +22,7 @@ export const upsert = async ({ title, releaseDate, trackCount, upc, label, type,
 
     return releaseId;
   } catch (error) {
-    await transaction.rollback();
+    await transaction.rollback().catch(() => {});
 
     if (ALL_SQL_EXPOSABLE_ERROR_NUMBERS.includes(error.number)) {
       throw new ExposableError(error.message, 400, error);

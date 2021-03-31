@@ -1,0 +1,1 @@
+curl -i -X POST -H "Content-Type: application/json" -d "{\"title\": \"The song\", \"release-date\": \"2020-01-01\", \"track-count\": \"1\", \"upc\": \"123456790\", \"label\": \"1\", \"type\": \"album\", \"artists\": [\"1\"]}" localhost:3000/release

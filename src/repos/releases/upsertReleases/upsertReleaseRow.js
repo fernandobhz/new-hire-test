@@ -11,6 +11,12 @@ export const upsertReleaseRow = async ({ transaction, title, releaseDate, trackC
   } = await request.query`
       select
         id
+        , title
+        , releaseDate
+        , trackCount
+        , upc
+        , labelId
+        , typeId
       from releases
       where (upc = ${upc}) or (title = ${title} and releaseDate = ${releaseDate})
     `;
@@ -31,16 +37,16 @@ export const upsertReleaseRow = async ({ transaction, title, releaseDate, trackC
     }
 
     const doesDatabaseNeedsToBeUpdated =
-      trackCount !== existingRow.trackCount || label !== existingRow.label || type !== existingRow.type;
+      trackCount !== existingRow.trackCount || label !== existingRow.labelId || typeId !== existingRow.typeId;
 
     if (doesDatabaseNeedsToBeUpdated) {
       request = new db.Request(transaction);
 
       await request.query`
         update releases set 
-          trackCount = ${trackCount}
-          , labelId = ${label}
-          , typeId = ${typeId}
+          trackCount = ${trackCount || existingRow.trackCount}
+          , labelId = ${label || existingRow.labelId}
+          , typeId = ${typeId || existingRow.typeId}
         where (upc = ${upc}) or (title = ${title} and releaseDate = ${releaseDate})
       `;
     }
