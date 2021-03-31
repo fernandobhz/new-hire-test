@@ -5,7 +5,7 @@ export const get = async () => {
       select
         r.id
         , r.title
-        , r.release_date
+        , r.releaseDate
         , r.trackCount
         , r.upc
         , l.name as label

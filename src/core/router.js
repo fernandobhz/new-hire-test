@@ -40,13 +40,13 @@ router.post("/releases", (req, res, next) =>
   releases
     .post({
       title: req.body.title,
-      releaseDate: req.body.releaseDate,
-      trackCount: req.body.trackCount,
+      releaseDate: req.body.releaseDate || req.body.release_date || req.body["release-date"],
+      trackCount: req.body.trackCount || req.body.track_count || req.body["track-count"],
       upc: req.body.upc,
       label: req.body.label,
       type: req.body.type,
       artists: req.body.artists,
     })
-    .then(() => res.status(201).json({ id: req.body.id }))
+    .then(id => res.status(201).json({ id }))
     .catch(next)
 );

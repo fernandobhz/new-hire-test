@@ -3,6 +3,7 @@
 * Dedup algorithm
 * Data validations and error handling
 * Queries
+* Supertest for integration test.
 * 
 * Reorganazing commits
 * Create proper Repositories for entities
