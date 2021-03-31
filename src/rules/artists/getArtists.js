@@ -10,7 +10,7 @@ export const get = async () => {
       `;
 
   const artistsWithGenres = await Promise.all(
-    artists.map(async (artist) => {
+    artists.map(async artist => {
       const { recordset: genres } = await db.query`
           select
             g.name
@@ -21,7 +21,7 @@ export const get = async () => {
 
       return {
         ...artist,
-        genres: genres.map((genre) => genre.name),
+        genres: genres.map(genre => genre.name),
       };
     })
   );

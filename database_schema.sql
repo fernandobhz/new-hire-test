@@ -4,6 +4,7 @@ CREATE DATABASE [media]
 GO
 USE [media]
 GO
+/****** Object:  Table [dbo].[artists]    Script Date: 31/03/2021 13:29:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -18,6 +19,7 @@ CREATE TABLE [dbo].[artists](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+/****** Object:  Table [dbo].[artists_genres]    Script Date: 31/03/2021 13:29:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -32,6 +34,7 @@ CREATE TABLE [dbo].[artists_genres](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+/****** Object:  Table [dbo].[genres]    Script Date: 31/03/2021 13:29:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -45,12 +48,13 @@ CREATE TABLE [dbo].[genres](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+/****** Object:  Table [dbo].[labels]    Script Date: 31/03/2021 13:29:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[labels](
-	[id] [int] IDENTITY(1,1) NOT NULL,
+	[id] [int] NOT NULL,
 	[name] [nvarchar](300) NOT NULL,
 	[distributor] [nvarchar](300) NULL,
 	[region] [char](2) NOT NULL,
@@ -60,15 +64,16 @@ CREATE TABLE [dbo].[labels](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+/****** Object:  Table [dbo].[releases]    Script Date: 31/03/2021 13:29:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[releases](
-	[id] [int] NOT NULL,
+	[id] [int] NOT NULL IDENTITY (1, 1),
 	[title] [nvarchar](300) NOT NULL,
-	[release-date] [date] NOT NULL,
-	[track-count] [int] NULL,
+	[releaseDate] [date] NOT NULL,
+	[trackCount] [int] NULL,
 	[upc] [varchar](50) NULL,
 	[labelId] [int] NOT NULL,
 	[typeId] [int] NOT NULL,
@@ -78,6 +83,7 @@ CREATE TABLE [dbo].[releases](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+/****** Object:  Table [dbo].[releases_artists]    Script Date: 31/03/2021 13:29:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -92,11 +98,12 @@ CREATE TABLE [dbo].[releases_artists](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+/****** Object:  Table [dbo].[types]    Script Date: 31/03/2021 13:29:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[type](
+CREATE TABLE [dbo].[types](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[name] [varchar](max) NOT NULL,
  CONSTRAINT [PK_type] PRIMARY KEY CLUSTERED 
@@ -107,6 +114,7 @@ CREATE TABLE [dbo].[type](
 GO
 SET ANSI_PADDING ON
 GO
+/****** Object:  Index [IX_artists]    Script Date: 31/03/2021 13:29:41 ******/
 CREATE NONCLUSTERED INDEX [IX_artists] ON [dbo].[artists]
 (
 	[name] ASC
@@ -114,6 +122,7 @@ CREATE NONCLUSTERED INDEX [IX_artists] ON [dbo].[artists]
 GO
 SET ANSI_PADDING ON
 GO
+/****** Object:  Index [IX_releases_first_identifier]    Script Date: 31/03/2021 13:29:41 ******/
 CREATE NONCLUSTERED INDEX [IX_releases_first_identifier] ON [dbo].[releases]
 (
 	[upc] ASC
@@ -121,10 +130,11 @@ CREATE NONCLUSTERED INDEX [IX_releases_first_identifier] ON [dbo].[releases]
 GO
 SET ANSI_PADDING ON
 GO
+/****** Object:  Index [IX_releases_second_identifier]    Script Date: 31/03/2021 13:29:41 ******/
 CREATE NONCLUSTERED INDEX [IX_releases_second_identifier] ON [dbo].[releases]
 (
 	[title] ASC,
-	[release-date] ASC
+	[releaseDate] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[artists_genres]  WITH CHECK ADD  CONSTRAINT [FK_artists_genres_artists] FOREIGN KEY([artistId])
@@ -142,10 +152,10 @@ REFERENCES [dbo].[labels] ([id])
 GO
 ALTER TABLE [dbo].[releases] CHECK CONSTRAINT [FK_releases_labels]
 GO
-ALTER TABLE [dbo].[releases]  WITH CHECK ADD  CONSTRAINT [FK_releases_type] FOREIGN KEY([typeId])
-REFERENCES [dbo].[type] ([id])
+ALTER TABLE [dbo].[releases]  WITH CHECK ADD  CONSTRAINT [FK_releases_types] FOREIGN KEY([typeId])
+REFERENCES [dbo].[types] ([id])
 GO
-ALTER TABLE [dbo].[releases] CHECK CONSTRAINT [FK_releases_type]
+ALTER TABLE [dbo].[releases] CHECK CONSTRAINT [FK_releases_types]
 GO
 ALTER TABLE [dbo].[releases_artists]  WITH CHECK ADD  CONSTRAINT [FK_releases_artists_artists] FOREIGN KEY([artistId])
 REFERENCES [dbo].[artists] ([id])

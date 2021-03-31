@@ -1,4 +1,4 @@
-import db from "mssql"
+import db from "mssql";
 
 export const assignGenreToArtist = async ({ transaction, artistId, genreId }) => {
   const request = new db.Request(transaction);

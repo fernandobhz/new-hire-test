@@ -1,4 +1,4 @@
-import db from "mssql"
+import db from "mssql";
 
 export const insertArtist = async ({ transaction, id, name, spotifyId }) => {
   const request = new db.Request(transaction);

@@ -13,4 +13,4 @@ app.use(cors());
 app.use(router);
 app.use(errorHandler);
 
-export const start = (port) => new Promise((resolve) => app.listen(port, () => resolve(app)));
+export const start = port => new Promise(resolve => app.listen(port, () => resolve(app)));
