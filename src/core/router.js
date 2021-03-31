@@ -10,9 +10,9 @@ router.get("/labels", (req, res, next) =>
     .then(result => res.json(result))
     .catch(next)
 );
-router.post("/labels", (req, res, next) =>
+router.post("/label", (req, res, next) =>
   labels
-    .post({ id: req.body.id, name: req.body.name, distributor: req.body.distributor, region: req.body.region })
+    .postOne({ id: req.body.id, name: req.body.name, distributor: req.body.distributor, region: req.body.region })
     .then(() => res.status(201).json({ id: req.body.id }))
     .catch(next)
 );
@@ -23,9 +23,9 @@ router.get("/artists", (req, res, next) =>
     .then(result => res.json(result))
     .catch(next)
 );
-router.post("/artists", (req, res, next) =>
+router.post("/artist", (req, res, next) =>
   artists
-    .post({ id: req.body.id, name: req.body.name, spotifyId: req.body.spotifyId, genres: req.body.genres })
+    .postOne({ id: req.body.id, name: req.body.name, spotifyId: req.body.spotifyId, genres: req.body.genres })
     .then(() => res.status(201).json({ id: req.body.id }))
     .catch(next)
 );
@@ -36,9 +36,9 @@ router.get("/releases", (req, res, next) =>
     .then(result => res.json(result))
     .catch(next)
 );
-router.post("/releases", (req, res, next) =>
+router.post("/release", (req, res, next) =>
   releases
-    .post({
+    .postOne({
       title: req.body.title,
       releaseDate: req.body.releaseDate || req.body.release_date || req.body["release-date"],
       trackCount: req.body.trackCount || req.body.track_count || req.body["track-count"],
