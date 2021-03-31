@@ -1,7 +1,7 @@
 import db from "mssql";
 
 export const upsertGenre = async ({ transaction, genre }) => {
-  let request = new sql.Request(transaction);
+  let request = new db.Request(transaction);
 
   const {
     recordset: [existingGenre],
@@ -14,7 +14,7 @@ export const upsertGenre = async ({ transaction, genre }) => {
 
   if (existingGenre) return existingGenre.id;
 
-  request = new sql.Request(transaction);
+  request = new db.Request(transaction);
 
   const {
     recordset: [{ newid }],

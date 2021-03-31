@@ -1,6 +1,6 @@
 import db from "mssql";
 
-export const get = async (req, res) => {
+export const get = async () => {
   const { recordset: labels } = await db.query`
       select
         id
@@ -10,5 +10,5 @@ export const get = async (req, res) => {
       from labels
     `;
 
-  res.json(labels);
+  return labels;
 };

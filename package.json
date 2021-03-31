@@ -9,13 +9,15 @@
     "express": "^4.17.1",
     "helmet": "^4.4.1",
     "morgan": "^1.10.0",
-    "mssql": "^6.3.1"
+    "mssql": "^6.3.1",
+    "serialize-error": "^8.0.1"
   },
   "devDependencies": {
+    "esm": "^3.2.25",
     "nodemon": "^2.0.7"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",    
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node -r esm src/index.js",
     "dev": "nodemon -r esm src/index.js"
   },
