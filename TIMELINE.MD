@@ -22,3 +22,4 @@
 - Skipping data validation for now, I don't know if there is time to do so. But this is my first thing on todo list. A joi or express-openapi-validator
 - Putting controllers and error handlers on todo list
 - Simple label get post coded.... it's missing yet the dedup algorithm... it'll be done after all routes have been coded.
+- Code organized

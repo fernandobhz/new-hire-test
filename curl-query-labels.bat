@@ -1,1 +1,1 @@
-curl localhost:3000/labels
+curl -i localhost:3000/labels

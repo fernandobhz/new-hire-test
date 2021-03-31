@@ -1,1 +1,1 @@
-curl localhost:3000/artists
+curl -i localhost:3000/artists
