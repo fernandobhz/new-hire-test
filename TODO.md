@@ -1,4 +1,6 @@
-# Todo
+# Todo\
+* Organizate code, very messy
+* Reorganazing commits
 * Dedup algorithm
 *
 *
