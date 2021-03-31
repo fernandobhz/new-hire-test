@@ -4,12 +4,16 @@ import { labels, artists, releases } from "../rules";
 
 export const router = Router();
 
+/**
+ * Labels
+ */
 router.get("/labels", (req, res, next) =>
   labels
     .get()
     .then(result => res.json(result))
     .catch(next)
 );
+
 router.post("/label", (req, res, next) =>
   labels
     .postOne({ id: req.body.id, name: req.body.name, distributor: req.body.distributor, region: req.body.region })
@@ -17,12 +21,23 @@ router.post("/label", (req, res, next) =>
     .catch(next)
 );
 
+router.post("/labels", (req, res, next) =>
+  labels
+    .postRows(req.body.data)
+    .then(() => res.status(201).json({ rowsProcessed: req.body.data.length }))
+    .catch(next)
+);
+
+/**
+ * Artists
+ */
 router.get("/artists", (req, res, next) =>
   artists
     .get()
     .then(result => res.json(result))
     .catch(next)
 );
+
 router.post("/artist", (req, res, next) =>
   artists
     .postOne({ id: req.body.id, name: req.body.name, spotifyId: req.body.spotifyId, genres: req.body.genres })
@@ -30,12 +45,23 @@ router.post("/artist", (req, res, next) =>
     .catch(next)
 );
 
+router.post("/artists", (req, res, next) =>
+  artists
+    .postRows(req.body.data)
+    .then(() => res.status(201).json({ rowsProcessed: req.body.data.length }))
+    .catch(next)
+);
+
+/**
+ * Releases
+ */
 router.get("/releases", (req, res, next) =>
   releases
     .get()
     .then(result => res.json(result))
     .catch(next)
 );
+
 router.post("/release", (req, res, next) =>
   releases
     .postOne({
@@ -48,5 +74,12 @@ router.post("/release", (req, res, next) =>
       artists: req.body.artists,
     })
     .then(id => res.status(201).json({ id }))
+    .catch(next)
+);
+
+router.post("/releases", (req, res, next) =>
+  releases
+    .postRows(req.body.data)
+    .then(() => res.status(201).json({ rowsProcessed: req.body.data.length }))
     .catch(next)
 );

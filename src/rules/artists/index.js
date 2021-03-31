@@ -1,2 +1,2 @@
 export { get } from "./getArtists";
-export { postOne } from "./postArtists";
+export { postOne, postRows } from "./postArtists";

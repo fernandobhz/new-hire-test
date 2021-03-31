@@ -2,14 +2,14 @@ import db from "mssql";
 
 const { MSSQL_HOST, MSSQL_USERNAME, MSSQL_PASSWORD, MSSQL_DBNAME } = process.env;
 
-export const connect = () =>
+export const connect = async () =>
   db
     .connect({
       server: MSSQL_HOST,
       user: MSSQL_USERNAME,
       password: MSSQL_PASSWORD,
       database: MSSQL_DBNAME,
-      options: { enableArithAbort: true },
+      options: { enableArithAbort: true, abortTransactionOnError: false },
     })
     .then(() => {
       // eslint-disable-next-line no-console

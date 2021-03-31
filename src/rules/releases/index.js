@@ -1,2 +1,2 @@
 export { get } from "./getReleases";
-export { postOne } from "./postReleases";
+export { postOne, postRows } from "./postReleases";

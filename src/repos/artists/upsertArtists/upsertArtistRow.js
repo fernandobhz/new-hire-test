@@ -6,8 +6,10 @@ export const upsertArtistRow = async ({ transaction, id, name, spotifyId }) => {
   const {
     recordset: [existingRow],
   } = await request.query`
-      select
+      select 
         id
+        , name
+        , spotifyId
       from artists
       where id = ${id}
     `;
@@ -20,8 +22,8 @@ export const upsertArtistRow = async ({ transaction, id, name, spotifyId }) => {
 
       await request.query`
         update artists set
-          name = ${name}
-          , spotifyId = ${spotifyId}
+          name = ${name || existingRow.name}
+          , spotifyId = ${spotifyId || existingRow.spotifyId}
         where id = ${id} 
       `;
     }

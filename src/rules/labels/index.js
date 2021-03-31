@@ -1,2 +1,2 @@
 export { get } from "./getLabel";
-export { postOne } from "./postLabel";
+export { postOne, postRows } from "./postLabel";
