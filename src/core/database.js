@@ -12,9 +12,11 @@ export const connect = () =>
       options: { enableArithAbort: true },
     })
     .then(() => {
+      // eslint-disable-next-line no-console
       console.info("Successfully connected to SQL Server");
     })
-    .catch((error) => {
+    .catch(error => {
+      // eslint-disable-next-line no-console
       console.error(error);
-      process.exit(err.code || 1);
+      process.exit(error.code || 1);
     });

@@ -23,3 +23,4 @@
 - Putting controllers and error handlers on todo list
 - Simple label get post coded.... it's missing yet the dedup algorithm... it'll be done after all routes have been coded.
 - Code organized
+- Moving from kebab-case to camelCase on sql server.

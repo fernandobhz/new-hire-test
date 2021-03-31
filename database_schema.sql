@@ -72,8 +72,8 @@ GO
 CREATE TABLE [dbo].[releases](
 	[id] [int] NOT NULL IDENTITY (1, 1),
 	[title] [nvarchar](300) NOT NULL,
-	[release-date] [date] NOT NULL,
-	[track-count] [int] NULL,
+	[releaseDate] [date] NOT NULL,
+	[trackCount] [int] NULL,
 	[upc] [varchar](50) NULL,
 	[labelId] [int] NOT NULL,
 	[typeId] [int] NOT NULL,
@@ -134,7 +134,7 @@ GO
 CREATE NONCLUSTERED INDEX [IX_releases_second_identifier] ON [dbo].[releases]
 (
 	[title] ASC,
-	[release-date] ASC
+	[releaseDate] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[artists_genres]  WITH CHECK ADD  CONSTRAINT [FK_artists_genres_artists] FOREIGN KEY([artistId])

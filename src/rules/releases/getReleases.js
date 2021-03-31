@@ -5,8 +5,8 @@ export const get = async () => {
       select
         r.id
         , r.title
-        , r.[release-date]
-        , r.[track-count]
+        , r.release_date
+        , r.trackCount
         , r.upc
         , l.name as label
         , t.name as type
@@ -16,7 +16,7 @@ export const get = async () => {
     `;
 
   const releasesWithArtists = await Promise.all(
-    releases.map(async (release) => {
+    releases.map(async release => {
       const { recordset: artists } = await db.query`
             select
               a.name
@@ -27,7 +27,7 @@ export const get = async () => {
 
       return {
         ...release,
-        artists: artists.map((artist) => artist.name),
+        artists: artists.map(artist => artist.name),
       };
     })
   );

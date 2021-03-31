@@ -1,1 +1,1 @@
-export { post } from "./postArtists"
+export { post } from "./postArtists";

@@ -1,5 +1,5 @@
 import db from "mssql";
-import { ExposableError } from "../../core/exposableError"
+import { ExposableError } from "../../core/exposableError";
 
 export const post = async ({ id, name, distributor, region }) => {
   try {
