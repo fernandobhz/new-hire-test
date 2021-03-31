@@ -4,7 +4,7 @@ export const upsertGenre = async ({ transaction, genre }) => {
   let request = new db.Request(transaction);
 
   const {
-    recordset: [existingGenre],
+    recordset: [existingRow],
   } = await request.query`
       select
         id
@@ -12,7 +12,7 @@ export const upsertGenre = async ({ transaction, genre }) => {
       where name = ${genre}
     `;
 
-  if (existingGenre) return existingGenre.id;
+  if (existingRow) return existingRow.id;
 
   request = new db.Request(transaction);
 
