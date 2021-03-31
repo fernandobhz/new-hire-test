@@ -36,7 +36,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[genre](
+CREATE TABLE [dbo].[genres](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[name] [nvarchar](300) NOT NULL,
  CONSTRAINT [PK_genre] PRIMARY KEY CLUSTERED 
@@ -133,7 +133,7 @@ GO
 ALTER TABLE [dbo].[artists_genres] CHECK CONSTRAINT [FK_artists_genres_artists]
 GO
 ALTER TABLE [dbo].[artists_genres]  WITH CHECK ADD  CONSTRAINT [FK_artists_genres_genre] FOREIGN KEY([genreId])
-REFERENCES [dbo].[genre] ([id])
+REFERENCES [dbo].[genres] ([id])
 GO
 ALTER TABLE [dbo].[artists_genres] CHECK CONSTRAINT [FK_artists_genres_genre]
 GO
