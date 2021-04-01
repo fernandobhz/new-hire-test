@@ -1,6 +1,4 @@
 # Todo Priorities
-* Queries
-*
 * Supertest for integration test.
 * Stream input and stream output
 *

@@ -33,7 +33,15 @@ router.post("/labels", (req, res, next) =>
  */
 router.get("/artists", (req, res, next) =>
   artists
-    .get()
+    .get({
+      artistId: req.query.artistId,
+      artistName: req.query.artistName,
+      typeName: req.query.typeName,
+      labelId: req.query.labelId,
+      upc: req.query.upc,
+      artistIdList: req.query.artistIdList,
+      artistNameList: req.query.artistNameList,
+    })
     .then(result => res.json(result))
     .catch(next)
 );

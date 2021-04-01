@@ -10,7 +10,7 @@ export const postOne = async params => {
     id: Joi.number().required(),
     name: Joi.string().required(),
     distributor: Joi.string().allow(null).optional(),
-    region: Joi.string().required(),
+    region: Joi.string().valid("CA", "UK", "US").required(),
   });
 
   const { error, value } = schema.validate(params, {
