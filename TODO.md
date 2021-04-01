@@ -1,8 +1,6 @@
 # Todo Priorities
-* Data validations and error handling
 * Queries
 *
-* Organazing the routes into submodules
 * Supertest for integration test.
 * Stream input and stream output
 *
