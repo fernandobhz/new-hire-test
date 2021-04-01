@@ -10,7 +10,8 @@
     "helmet": "^4.4.1",
     "morgan": "^1.10.0",
     "mssql": "^6.3.1",
-    "serialize-error": "^8.0.1"
+    "serialize-error": "^8.0.1",
+    "joi": "^14.3.1"
   },
   "devDependencies": {
     "esm": "^3.2.25",
