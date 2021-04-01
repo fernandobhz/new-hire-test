@@ -27,3 +27,5 @@
 - POST and GET of labels, artists and releases done but it's missing the dedup algorithm
 - Assuming to only add new relations between releases and artist, since we have some with missing data.
 - Dedup algorithm finished. Missing data validations and Queries.
+- Queries finished
+- I did have time to do all features that I want :-\ but I could complete what was requested
